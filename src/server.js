@@ -15,8 +15,10 @@ app.use(express.json());
 app.use("/books", bookRouter);
 
 const syncTables = () => {
-  Book.sync();
+  // Model.sync({alter: true})
+
   Author.sync();
+  Book.sync();
 };
 
 app.get("/health", (req, res) => {
